@@ -10,6 +10,8 @@ app.use(cors());
 app.use(express.json());
 app.use("/api", userRoute);
 
+
+
 const PORT = 7000; // Correct port
 
 app.listen(PORT, () => {
