@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+require("dotenv").config();
 const userRoute = require("./routes/userRoute");
 const cors = require("cors");
 
@@ -19,9 +20,7 @@ app.listen(PORT, () => {
 });
 
 mongoose
-  .connect(
-    "mongodb+srv://padghanamardip:admin123@cluster0.pblkv9v.mongodb.net/your_database_name_here?retryWrites=true&w=majority"
-  )
+  .connect(process.env.MONGODB_URL)
   .then(() => {
     console.log("Connected to MongoDB");
   })
